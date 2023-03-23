@@ -28,7 +28,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 7%;
+  padding: 1rem 7%;
   background-color: var(--bg);
   opacity: 0.8;
   border-bottom: 1px solid var(--primary);
@@ -101,7 +101,7 @@ html {
 
 .hero .content {
   padding: 5rem 7%;
-  max-width: 65rem;
+  max-width: 80rem;
 }
 
 .hero .content .content-halo {
@@ -118,7 +118,7 @@ html {
 
 .hero .content .content-quote {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .hero .content .content-quote span {
@@ -127,18 +127,17 @@ html {
 
 .hero .btn {
   font-size: 1.2rem;
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 4rem;
   border-radius: 50rem;
-  color: var(--primary);
+  color: #fff;
+  background-color: var(--primary);
   font-weight: 700;
   transition: 0.3s linear;
-  border: 0.15rem solid var(--primary);
 }
 
 .hero .btn:hover {
-  background-color: var(--primary);
-  color: #fff;
-  border: 0.15rem solid #fff;
+  background-color: #fff;
+  color: var(--primary);
   transition: 0.3s linear;
 }
 
