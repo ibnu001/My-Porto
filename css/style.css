@@ -136,8 +136,8 @@ html {
 }
 
 .hero .btn:hover {
-  background-color: #fff;
   color: var(--primary);
+  background-color: #fff;
   transition: 0.3s linear;
 }
 
