@@ -28,7 +28,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7%;
+  padding: 0.8rem 7%;
   background-color: var(--bg);
   opacity: 0.8;
   border-bottom: 1px solid var(--primary);
@@ -40,16 +40,16 @@ html {
 }
 
 .navbar .navbar-logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #fff;
   font-style: italic;
 }
 
 .navbar .navbar-nav a {
   color: #fff;
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0 1rem;
 }
 
@@ -89,26 +89,35 @@ html {
   align-items: center;
   background-image: linear-gradient(
       to bottom,
-      rgba(34, 40, 49, 0) 0%,
+      rgba(34, 40, 49, 0.2) 0%,
       rgba(34, 40, 49, 1) 100%
     ),
     url('../img/header-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   position: relative;
 }
 
-.hero .content {
-  padding: 5rem 7%;
-  max-width: 80rem;
+.hero .main .container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
-.hero .content .content-halo {
+.hero .main .container .content {
+  flex: 1 1 100%;
+}
+
+.hero .main .container .profil-img {
+  flex: 1 1 60%;
+}
+
+.hero .main .container .content .content-halo {
   font-size: 1.2rem;
 }
 
-.hero .content h1 {
+.hero .main .container .content h1 {
   font-size: 3.5rem;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
@@ -116,16 +125,16 @@ html {
   margin-bottom: 0.5rem;
 }
 
-.hero .content .content-quote {
+.hero .main .container .content .content-quote {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.hero .content .content-quote span {
+.hero .main .container .content .content-quote span {
   color: #f84545;
 }
 
-.hero .btn {
+.hero .main .container .btn {
   font-size: 1.2rem;
   padding: 0.8rem 4rem;
   border-radius: 50rem;
@@ -135,10 +144,94 @@ html {
   transition: 0.3s linear;
 }
 
-.hero .btn:hover {
+.hero .main .container .btn:hover {
   color: var(--primary);
   background-color: #fff;
   transition: 0.3s linear;
+}
+
+.hero .main .container .profil-img img {
+  width: 70%;
+  margin-left: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  transition: 0.3s linear;
+}
+
+.hero .main .container .profil-img img:hover {
+  transform: translate(10px, -10px);
+  box-shadow: -10px 10px var(--primary);
+}
+
+/* About Section */
+.about,
+.menu,
+.contact,
+.hero {
+  padding: 5rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+  object-position: center;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.about .row .about-img img {
+  width: 80%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  object-position: center;
+  aspect-ratio: 1/1;
+  transition: 0.3s linear;
+}
+
+.about .row .about-img img:hover {
+  transform: translate(10px, -10px);
+  box-shadow: -10px 10px var(--primary);
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.about .row .content p span {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* Media Queries */
@@ -178,7 +271,7 @@ html {
     display: block;
     margin: 1.5rem;
     padding: 0.5px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .navbar .navbar-nav a::after {
@@ -187,6 +280,83 @@ html {
 
   .navbar .navbar-nav a:hover:after {
     transform: scaleX(0.2);
+  }
+
+  .hero .main .container {
+    flex-flow: column-reverse;
+  }
+
+  .hero .main .container .profil-img {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .hero .main .container .profil-img img {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about .row .about-img {
+    padding-right: 0;
+    text-align: center;
+  }
+  .about .row .about-img img {
+    width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .menu .row {
+    margin-top: 3rem;
+    justify-content: center;
+  }
+
+  .menu .row .menu-card {
+    padding: 1.2rem;
+  }
+
+  .menu p,
+  .contact p {
+    font-size: 1.6rem;
+  }
+
+  .menu .row .menu-card .menu-card-price {
+    font-size: 1.6rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 40rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .contact .row form {
+    padding: 0 2rem;
   }
 }
 
