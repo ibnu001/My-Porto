@@ -26,7 +26,6 @@ html {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.8rem 7%;
   background-color: var(--bg);
@@ -40,6 +39,7 @@ html {
 }
 
 .navbar .navbar-logo {
+  flex: 2 1 auto;
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
@@ -147,7 +147,6 @@ html {
 .hero .main .container .btn:hover {
   color: var(--primary);
   background-color: #fff;
-  transition: 0.3s linear;
 }
 
 .hero .main .container .profil-img img {
@@ -168,13 +167,15 @@ html {
 .about,
 .menu,
 .contact,
-.hero {
-  padding: 5rem 7% 1.4rem;
+.hero,
+.gallery {
+  padding: 6rem 7% 1.4rem;
 }
 
 .about h2,
 .menu h2,
-.contact h2 {
+.contact h2,
+.gallery h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 2rem;
@@ -182,7 +183,8 @@ html {
 
 .about h2 span,
 .menu h2 span,
-.contact h2 span {
+.contact h2 span,
+.gallery h2 span {
   color: var(--primary);
 }
 
@@ -232,6 +234,29 @@ html {
 .about .row .content p span {
   color: var(--primary);
   font-weight: 700;
+}
+
+/* Gallery Section */
+.gallery .figma {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery .figma h3 {
+  padding: 0 2rem 0 2rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.gallery .figma-iframe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery .figma-iframe iframe {
+  border-radius: 2rem;
+  width: 100%;
+  padding: 1.2rem;
 }
 
 /* Media Queries */
@@ -298,6 +323,11 @@ html {
 
   .about .row {
     flex-wrap: wrap;
+  }
+
+  .gallery .figma-iframe {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .about h2 {
