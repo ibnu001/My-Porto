@@ -16,7 +16,6 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 5000px;
 }
 
 html {
@@ -201,6 +200,7 @@ html {
 
 .about .row .about-img img {
   width: 80%;
+  margin-top: 1rem;
   border-radius: 0.5rem;
   object-fit: cover;
   border: 2px solid var(--primary);
@@ -237,26 +237,90 @@ html {
 }
 
 /* Gallery Section */
-.gallery .figma {
+.gallery .figma,
+.gallery .android {
   display: flex;
   flex-direction: column;
 }
 
-.gallery .figma h3 {
-  padding: 0 2rem 0 2rem;
+.gallery .figma h3,
+.gallery .android h3 {
+  padding: 1rem 2rem 0 2rem;
   font-size: 1.5rem;
   color: var(--primary);
 }
 
-.gallery .figma-iframe {
+.gallery .figma .row,
+.gallery .android .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.gallery .figma-iframe iframe {
-  border-radius: 2rem;
-  width: 100%;
+.gallery .figma .row .figma-iframe,
+.gallery .android .row .android-iframe {
+  text-align: center;
+  width: 50%;
   padding: 1.2rem;
+}
+
+.gallery .figma .row .figma-iframe iframe,
+.gallery .android .row .android-iframe iframe {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  aspect-ratio: 4/3;
+}
+
+.gallery .figma .row .figma-iframe h3,
+.gallery .android .row .android-iframe h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 3rem;
+  font-weight: 400;
+}
+
+.gallery .android .row .android-iframe p {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  text-align: left;
+  font-weight: 300;
+}
+
+/* Footer Section */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 2.5rem 0 2.5rem;
+  margin-top: 6rem;
+}
+
+footer .socials,
+.links {
+  padding: 0 0 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+.links a:hover {
+  color: var(--bg);
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0 1rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
 }
 
 /* Media Queries */
@@ -325,9 +389,20 @@ html {
     flex-wrap: wrap;
   }
 
-  .gallery .figma-iframe {
-    flex-wrap: wrap;
+  .gallery .figma .row,
+  .gallery .android .row {
+    flex-flow: column;
     justify-content: center;
+  }
+
+  .gallery .figma .row .figma-iframe,
+  .gallery .android .row .android-iframe {
+    width: 100%;
+  }
+
+  .gallery .figma .row .figma-iframe iframe,
+  .gallery .android .row .android-iframe iframe {
+    aspect-ratio: 3/2;
   }
 
   .about h2 {
@@ -355,24 +430,6 @@ html {
   }
 
   .about .row .content p {
-    font-size: 1.6rem;
-  }
-
-  .menu .row {
-    margin-top: 3rem;
-    justify-content: center;
-  }
-
-  .menu .row .menu-card {
-    padding: 1.2rem;
-  }
-
-  .menu p,
-  .contact p {
-    font-size: 1.6rem;
-  }
-
-  .menu .row .menu-card .menu-card-price {
     font-size: 1.6rem;
   }
 
